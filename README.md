@@ -89,13 +89,32 @@ The project follows this step-by-step workflow:
 
 ---
 
+## 👨‍💻 About Me  
 
+Hi, I’m **Bhukya Suresh**, an aspiring **Quantitative Analyst & Data Scientist** passionate about applying **AI/ML in Finance**.  
+
+🔹 Skilled in **Python, Machine Learning, Deep Learning, and Financial Data Analysis**.  
+🔹 Strong understanding of **stock market dynamics, time-series forecasting, and quantitative trading strategies**.  
+🔹 Experienced in building **end-to-end financial ML projects** – from collecting historical stock/index data to feature engineering, training predictive models, and backtesting trading strategies.  
+🔹 Interests: **Algorithmic Trading, Quantitative Finance, Risk Modeling, and Predictive Analytics**.  
+
+🌟 Career Goal:  
+To contribute to the **FinTech and Investment sector** by leveraging **Machine Learning, AI, and Quantitative Analysis** for smarter trading, risk management, and financial decision-making.  
+
+📫 Let’s Connect:  
+- **GitHub**: [suryaenterprising](https://github.com/suryaenterprising)  
+- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/) *(replace with your link)*  
+- **Email**: suryammu24@gmail.com *(replace with your email)*  
+
+
+---
 ## ⚡ Installation  
 
 ```bash
 git clone https://github.com/suryaenterprising/stock-prediction.git
 cd stock-prediction
 pip install -r requirements.txt
+
 
 
 
