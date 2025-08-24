@@ -1,4 +1,4 @@
-# 📈 Stock Prediction & Backtesting  
+# 📈 Stock Prediction by MACHINE LEARNING & Backtesting  
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python)](https://www.python.org/)  
 [![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-yellow?logo=pandas)](https://pandas.pydata.org/)  
@@ -22,13 +22,69 @@ This project combines **technical analysis + ML models** to generate **BUY/SELL 
 - **Backtesting:** Custom backtest engine for MA crossover & ML strategies  
 
 ---
+## ⚙️ Process Workflow  
 
+The project follows this step-by-step workflow:  
+
+1. **Data Collection** 📥  
+   - Stock data is fetched automatically from **Yahoo Finance** using `yfinance`.  
+   - Data includes **Open, High, Low, Close, Volume (OHLCV)**.  
+
+2. **Data Preprocessing & Feature Engineering** 🛠️  
+   - Missing values handled, data cleaned.  
+   - Technical indicators calculated:  
+     - **SMA (Simple Moving Average)**  
+     - **EMA (Exponential Moving Average)**  
+     - **RSI (Relative Strength Index)**  
+     - **MACD (Moving Average Convergence Divergence)**  
+     - **Bollinger Bands**  
+   - Features standardized for ML models.  
+
+3. **Strategy Selection** 🎯  
+   - **Option A → Moving Average Crossover Strategy**  
+     - Generates **BUY** when short MA > long MA.  
+     - Generates **SELL** when short MA < long MA.  
+   - **Option B → Machine Learning Model**  
+     - Trains ML classifier (Logistic Regression / Random Forest / SVM).  
+     - Predicts next-day trend (Up/Down).  
+
+4. **Backtesting Engine** 📊  
+   - Historical trades are simulated.  
+   - Portfolio value, PnL (Profit & Loss), and accuracy are calculated.  
+   - Equity curve generated.  
+
+5. **Results & Visualization** 📈  
+   - Buy/Sell points plotted on stock chart.  
+   - Equity curve compared with baseline (Buy & Hold).  
+   - Performance metrics exported:  
+     - Total Return  
+     - Sharpe Ratio  
+     - Win Rate  
+     - Max Drawdown  
+
+---
+
+## 🔄 Flow Diagram  
+
+```mermaid
+flowchart LR
+    A[Stock Data from Yahoo Finance] --> B[Preprocessing & Feature Engineering]
+    B --> C{Strategy Type?}
+    C -->|Moving Average| D[MA Crossover Signals]
+    C -->|Machine Learning| E[Train & Predict ML Model]
+    D --> F[Backtesting Engine]
+    E --> F[Backtesting Engine]
+    F --> G[Performance Metrics + Equity Curve]
+    G --> H[Visualization & Reports]
+
+---
 ## ⚡ Installation  
 
 ```bash
 git clone https://github.com/suryaenterprising/stock-prediction.git
 cd stock-prediction
 pip install -r requirements.txt
+
 
 
 
