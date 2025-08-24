@@ -5,7 +5,7 @@
 [![NumPy](https://img.shields.io/badge/NumPy-Matrix%20Math-orange?logo=numpy)](https://numpy.org/)  
 [![scikit-learn](https://img.shields.io/badge/Scikit--Learn-ML-green?logo=scikit-learn)](https://scikit-learn.org/stable/)  
 [![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-red?logo=plotly)](https://matplotlib.org/)  
-[![License](https://img.shields.io/badge/License-MIT-purple)](./LICENSE)  
+
 
 🚀 A Python-based framework for **stock price prediction, strategy backtesting, and machine learning-driven trading**.  
 This project combines **technical analysis + ML models** to generate **BUY/SELL signals** with backtested results.  
@@ -71,6 +71,7 @@ The project follows this step-by-step workflow:
 git clone https://github.com/suryaenterprising/stock-prediction.git
 cd stock-prediction
 pip install -r requirements.txt
+
 
 
 
