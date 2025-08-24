@@ -103,7 +103,7 @@ To contribute to the **FinTech and Investment sector** by leveraging **Machine L
 
 📫 Let’s Connect:  
 - **GitHub**: [suryaenterprising](https://github.com/suryaenterprising)  
-- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/bhukyasuresh3824) 
+- **LinkedIn**: [LinkedIn Profile](www.linkedin.com/in/bhukyasuresh3824) 
 - **Email**: suryammu24@gmail.com 
 
 
@@ -114,6 +114,7 @@ To contribute to the **FinTech and Investment sector** by leveraging **Machine L
 git clone https://github.com/suryaenterprising/stock-prediction.git
 cd stock-prediction
 pip install -r requirements.txt
+
 
 
 
