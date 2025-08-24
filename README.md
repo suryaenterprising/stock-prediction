@@ -64,26 +64,14 @@ The project follows this step-by-step workflow:
 
 ---
 
-## 🔄 Flow Diagram  
 
-```mermaid
-flowchart LR
-    A[Stock Data from Yahoo Finance] --> B[Preprocessing & Feature Engineering]
-    B --> C{Strategy Type?}
-    C -->|Moving Average| D[MA Crossover Signals]
-    C -->|Machine Learning| E[Train & Predict ML Model]
-    D --> F[Backtesting Engine]
-    E --> F[Backtesting Engine]
-    F --> G[Performance Metrics + Equity Curve]
-    G --> H[Visualization & Reports]
-
----
 ## ⚡ Installation  
 
 ```bash
 git clone https://github.com/suryaenterprising/stock-prediction.git
 cd stock-prediction
 pip install -r requirements.txt
+
 
 
 
