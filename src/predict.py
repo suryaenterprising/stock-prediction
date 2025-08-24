@@ -5,9 +5,24 @@ import numpy as np
 from datetime import datetime
 import joblib
 import time
+import requests
+import argparse
 
 MODEL_PATH = "models/nifty50_model.pkl"
-INTERVAL_MINUTES = 5  # Change interval as needed
+INTERVAL_MINUTES = 5  # Default interval
+
+# ------------------ Telegram Config ------------------
+TELEGRAM_TOKEN = "YOUR_BOT_TOKEN"   # <-- replace
+CHAT_ID = "YOUR_CHAT_ID"            # <-- replace
+
+def send_telegram(message: str):
+    """Send message to Telegram bot"""
+    try:
+        url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
+        payload = {"chat_id": CHAT_ID, "text": message}
+        requests.post(url, json=payload, timeout=10)
+    except Exception as e:
+        print(f"⚠️ Telegram error: {e}")
 
 # ------------------ Utility Functions ------------------
 def _ensure_datetime(df: pd.DataFrame) -> pd.DataFrame:
@@ -119,15 +134,17 @@ def run_live(symbol: str, interval: int = INTERVAL_MINUTES):
         while True:
             value = predict_next(symbol)
             if value is not None:
-                print(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} 📈 Predicted value: {value}")
+                ts = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                msg = f"{ts}\n📈 {symbol} Predicted Value: {value}"
+                print(msg)
+                send_telegram(msg)
             time.sleep(interval * 60)
     except KeyboardInterrupt:
         print("🛑 Live prediction stopped by user.")
 
 # ------------------ CLI ------------------
 if __name__ == "__main__":
-    import argparse
-    parser = argparse.ArgumentParser(description="Live stock/index predictor")
+    parser = argparse.ArgumentParser(description="Live stock/index predictor with Telegram alerts")
     parser.add_argument("--symbol", type=str, required=True, help="Stock/Index symbol, e.g., ^NSEI")
     parser.add_argument("--live", action="store_true", help="Run live prediction loop")
     parser.add_argument("--interval", type=int, default=INTERVAL_MINUTES, help="Interval in minutes for live prediction")
@@ -138,4 +155,6 @@ if __name__ == "__main__":
     else:
         value = predict_next(args.symbol)
         if value is not None:
-            print(f"📈 Predicted value for {args.symbol}: {value}")
+            msg = f"📈 Predicted value for {args.symbol}: {value}"
+            print(msg)
+            send_telegram(msg)
